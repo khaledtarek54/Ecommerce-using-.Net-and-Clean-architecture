@@ -1,0 +1,289 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\.net projects\\Ecommerce-project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.infrastructure\\migrations\\20240828150620_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\migrations\\20240828150620_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.infrastructure\\data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.Web.csproj|e:\\.net projects\\ecommerce-project\\ecommerce\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.Web.csproj|solutionrelative:ecommerce\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.Web.csproj|e:\\.net projects\\ecommerce-project\\ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.Web.csproj|solutionrelative:ecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.csproj|e:\\.net projects\\ecommerce-project\\ecommerce\\ecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.csproj|solutionrelative:ecommerce\\ecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAF260A8-A227-4934-895B-515F58FC1FFE}|docker-compose.dcproj|e:\\.net projects\\ecommerce-project\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CAF260A8-A227-4934-895B-515F58FC1FFE}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.Web.csproj|e:\\.net projects\\ecommerce-project\\ecommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.Web.csproj|solutionrelative:ecommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAF260A8-A227-4934-895B-515F58FC1FFE}|docker-compose.dcproj|e:\\.net projects\\ecommerce-project\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CAF260A8-A227-4934-895B-515F58FC1FFE}|docker-compose.dcproj|solutionrelative:launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAF260A8-A227-4934-895B-515F58FC1FFE}|docker-compose.dcproj|e:\\.net projects\\ecommerce-project\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CAF260A8-A227-4934-895B-515F58FC1FFE}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.csproj|e:\\.net projects\\ecommerce-project\\ecommerce\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B99C93FE-4F36-41F5-99A1-0EA2852BB3AC}|Ecommerce\\Ecommerce.csproj|solutionrelative:ecommerce\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC051F50-5FBB-4EAE-94A8-A1D408CBF256}|Ecommerce.Infrastructure\\Ecommerce.Infrastructure.csproj|solutionrelative:ecommerce.infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7EDE262-FD91-411E-8CDD-0ACEDCD7E761}|Ecommerce.Core\\Ecommerce.Core.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.core\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7EDE262-FD91-411E-8CDD-0ACEDCD7E761}|Ecommerce.Core\\Ecommerce.Core.csproj|solutionrelative:ecommerce.core\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7EDE262-FD91-411E-8CDD-0ACEDCD7E761}|Ecommerce.Core\\Ecommerce.Core.csproj|e:\\.net projects\\ecommerce-project\\ecommerce.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7EDE262-FD91-411E-8CDD-0ACEDCD7E761}|Ecommerce.Core\\Ecommerce.Core.csproj|solutionrelative:ecommerce.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240828150620_InitialCreate.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Migrations\\20240828150620_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Migrations\\20240828150620_InitialCreate.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Migrations\\20240828150620_InitialCreate.cs",
+              "RelativeToolTip": "Ecommerce.Infrastructure\\Migrations\\20240828150620_InitialCreate.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T15:06:29.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "Ecommerce.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T15:05:20.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Data\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Data\\ApplicationDbContextFactory.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Data\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "Ecommerce.Infrastructure\\Data\\ApplicationDbContextFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T15:03:49.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ecommerce",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\Ecommerce.csproj",
+              "RelativeDocumentMoniker": "Ecommerce\\Ecommerce.csproj",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\Ecommerce.csproj",
+              "RelativeToolTip": "Ecommerce\\Ecommerce.csproj",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-28T14:48:41.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-08-28T14:41:28.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-08-28T14:32:06.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\Dockerfile",
+              "RelativeDocumentMoniker": "Ecommerce\\Dockerfile",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\Dockerfile",
+              "RelativeToolTip": "Ecommerce\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-28T14:31:56.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Microsoft.VisualStudio.Docker.Compose.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAAwMcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-08-28T14:27:43.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Core\\Entities\\Product.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Entities\\Product.cs",
+              "RelativeToolTip": "Ecommerce.Core\\Entities\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T13:16:34.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Core\\Entities\\User.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Entities\\User.cs",
+              "RelativeToolTip": "Ecommerce.Core\\Entities\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T12:04:01.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Services\\UserService.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Services\\UserService.cs",
+              "RelativeToolTip": "Ecommerce.Infrastructure\\Services\\UserService.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwB8AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T11:42:55.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Ecommerce.Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T13:24:02.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Ecommerce\\appsettings.Development.json",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\appsettings.Development.json",
+              "RelativeToolTip": "Ecommerce\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-28T11:38:20.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\Program.cs",
+              "RelativeDocumentMoniker": "Ecommerce\\Program.cs",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\Program.cs",
+              "RelativeToolTip": "Ecommerce\\Program.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAWwEYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T11:31:25.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\launchSettings.json",
+              "RelativeDocumentMoniker": "launchSettings.json",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\launchSettings.json",
+              "RelativeToolTip": "launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-28T14:49:15.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\appsettings.json",
+              "RelativeDocumentMoniker": "Ecommerce\\appsettings.json",
+              "ToolTip": "E:\\.net projects\\Ecommerce-project\\Ecommerce\\appsettings.json",
+              "RelativeToolTip": "Ecommerce\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-28T11:33:38.152Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

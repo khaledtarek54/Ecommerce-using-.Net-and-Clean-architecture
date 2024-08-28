@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  ecommerce:
+    image: ${DOCKER_REGISTRY-}ecommerce
+    build:
+      context: .
+      dockerfile: Ecommerce/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    depends_on:
+     - ecommerce.database
+
+
+
+  ecommerce.database:
+    image: postgres:latest
+    container_name: ecommerce.database
+    environment:
+      - POSTGRES_DB=ecommerce
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+volumes:
+  db:
