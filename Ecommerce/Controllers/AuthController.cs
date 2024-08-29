@@ -4,6 +4,7 @@ using Ecommerce.Core.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -33,6 +34,7 @@ namespace Ecommerce.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Log.Information("The user entered wrong data");
                 return BadRequest(ModelState);
             }
             try
