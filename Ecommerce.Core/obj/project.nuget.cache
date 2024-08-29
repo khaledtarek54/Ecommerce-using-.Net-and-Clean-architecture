@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TtpUoBDPuJtU0l4C96/p5Bh6jnxYS5w6ibsp7Q+Q785TRRyuyA0xnsoRQXhaWFpcCPhYNTfdJ4l+2Mbz4nXAQg==",
+  "dgSpecHash": "rfLcvXq7RFDlJywqSmEl9exRQAXNIZHefhmWgRtjTw7wdbU+KCTrS73T8x6dYA9/MeNsk/ltfbuWezxi9qsRtQ==",
   "success": true,
-  "projectFilePath": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj",
+  "projectFilePath": "C:\\Users\\Khaled\\Desktop\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Khaled\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\Khaled\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

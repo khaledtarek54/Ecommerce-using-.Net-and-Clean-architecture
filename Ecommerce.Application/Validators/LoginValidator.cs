@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Application.Validators
 {
-    public class LoginValidator :   AbstractValidator<LoginDto>
+    public class LoginValidator : AbstractValidator<LoginDto>
     {
         public LoginValidator()
         {

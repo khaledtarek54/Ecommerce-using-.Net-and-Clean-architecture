@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj": {}
+    "C:\\Users\\Khaled\\Desktop\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj": {}
   },
   "projects": {
-    "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj": {
+    "C:\\Users\\Khaled\\Desktop\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Khaled\\Desktop\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj",
         "projectName": "Ecommerce.Core",
-        "projectPath": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj",
+        "projectPath": "C:\\Users\\Khaled\\Desktop\\Ecommerce-project\\Ecommerce.Core\\Ecommerce.Core.csproj",
         "packagesPath": "C:\\Users\\Khaled\\.nuget\\packages\\",
-        "outputPath": "E:\\.net projects\\Ecommerce-project\\Ecommerce.Core\\obj\\",
+        "outputPath": "C:\\Users\\Khaled\\Desktop\\Ecommerce-project\\Ecommerce.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Khaled\\AppData\\Roaming\\NuGet\\NuGet.Config",
