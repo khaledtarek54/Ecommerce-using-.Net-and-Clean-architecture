@@ -31,6 +31,10 @@ namespace Ecommerce.Web.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             try
             {
                 var user = await _userService.RegisterAsync(
@@ -50,6 +54,10 @@ namespace Ecommerce.Web.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var user = await _userService.AuthenticateAsync(loginDto.Email, loginDto.Password);
             if (user == null)
             {
