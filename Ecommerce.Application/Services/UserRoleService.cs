@@ -13,7 +13,7 @@ namespace Ecommerce.Application.Services
     public class UserRoleService
     {
         private readonly UserManager<User> _userManager;
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         public UserRoleService(UserManager<User> userManager, ApplicationDbContext context)
         {
             _userManager = userManager;
@@ -35,9 +35,9 @@ namespace Ecommerce.Application.Services
 
             return await _userManager.AddToRoleAsync(user, role);
         }
-        public async Task<IEnumerable<User>> GetUsersAsync()
+        public async Task<IEnumerable<Product>> GetUsersAsync()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Products.ToListAsync();
         }
     }
 }
