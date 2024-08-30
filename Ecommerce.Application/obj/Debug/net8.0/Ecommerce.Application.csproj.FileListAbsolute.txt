@@ -44,3 +44,5 @@ C:\Users\Khaled\Desktop\Ecommerce-project\Ecommerce.Application\bin\Debug\net8.0
 C:\Users\Khaled\Desktop\Ecommerce-project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Core.pdb
 C:\Users\Khaled\Desktop\Ecommerce-project\Ecommerce.Application\obj\Debug\net8.0\Ecommerc.C5F54E74.Up2Date
 C:\Users\Khaled\Desktop\Ecommerce-project\Ecommerce.Application\obj\Debug\net8.0\ref\Ecommerce.Application.dll
+C:\Users\Khaled\Desktop\Ecommerce-project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Infrastructure.dll
+C:\Users\Khaled\Desktop\Ecommerce-project\Ecommerce.Application\bin\Debug\net8.0\Ecommerce.Infrastructure.pdb

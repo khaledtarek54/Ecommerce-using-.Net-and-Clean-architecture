@@ -4,15 +4,9 @@ using Ecommerce.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Org.BouncyCastle.Crypto.Generators;
-using System;
-using System.Collections.Generic;
-
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Ecommerce.Infrastructure.Services
 {
@@ -70,6 +64,7 @@ namespace Ecommerce.Infrastructure.Services
             {
                 FirstName = firstName,
                 LastName = lastName,
+                UserName = firstName+lastName,
                 Email = email,
                 Password = BCrypt.Net.BCrypt.HashPassword(password)
             };
