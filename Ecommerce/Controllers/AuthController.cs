@@ -1,13 +1,8 @@
 ﻿using Ecommerce.Application.DTOs;
-using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using Serilog;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+
 
 namespace Ecommerce.Web.Controllers
 {
@@ -66,7 +61,7 @@ namespace Ecommerce.Web.Controllers
                 return Unauthorized("Invalid email or password");
             }
 
-            var token = _userService.GenerateJwtToken(user);
+            var token = _userService.GenerateJwtTokenAsync(user);
             return Ok(new { token });
         }
     }

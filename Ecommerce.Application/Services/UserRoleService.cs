@@ -1,9 +1,10 @@
 ﻿using Ecommerce.Core.Entities;
 using Ecommerce.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,9 @@ namespace Ecommerce.Application.Services
     public class UserRoleService
     {
         private readonly UserManager<User> _userManager;
-        private readonly ApplicationDbContext _context;
-        public UserRoleService(UserManager<User> userManager, ApplicationDbContext context)
+        public UserRoleService(UserManager<User> userManager)
         {
             _userManager = userManager;
-            _context = context;
         }
 
         public async Task<IdentityResult> AssignRoleAsync(string userId, string role)
@@ -33,11 +32,7 @@ namespace Ecommerce.Application.Services
                 return IdentityResult.Failed(new IdentityError { Description = "User already has this role." });
             }
 
-            return await _userManager.AddToRoleAsync(user, role);
-        }
-        public async Task<IEnumerable<Product>> GetUsersAsync()
-        {
-            return await _context.Products.ToListAsync();
+            return await _userManager.AddToRoleAsync(user,role);
         }
     }
 }

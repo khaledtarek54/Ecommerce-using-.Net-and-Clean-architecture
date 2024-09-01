@@ -14,6 +14,7 @@ services:
 
 
 
+
   ecommerce.database:
     image: postgres:latest
     container_name: ecommerce.database
