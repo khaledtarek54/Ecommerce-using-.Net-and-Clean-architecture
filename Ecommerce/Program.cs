@@ -1,4 +1,5 @@
 
+using Ecommerce.Application.Mappers;
 using Ecommerce.Application.Services;
 using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
@@ -26,6 +27,7 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Logging.ClearProviders();
 builder.Host.UseSerilog();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -38,6 +40,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddTransient<UserRoleService>();
+builder.Services.AddTransient<CategoryService>();
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"]);
 builder.Services.AddAuthentication(options =>

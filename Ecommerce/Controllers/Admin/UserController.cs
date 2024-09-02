@@ -20,7 +20,7 @@ namespace Ecommerce.Controllers.Admin
             _userRoleService = userRoleService;
             _userService = userService;
         }
-        [HttpPost]
+        [HttpPost("assignRole")]
         public async Task<ActionResult> AssignRole(string userid, string role)
         {
             var roleAssignResult = await _userRoleService.AssignRoleAsync(userid, role);
