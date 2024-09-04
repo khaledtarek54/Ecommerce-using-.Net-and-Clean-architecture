@@ -61,7 +61,7 @@ namespace Ecommerce.Application.Services
             {
                 return null;
             }
-            _logger.LogInformation("User {UserId}", user.Id);
+            
             var checkpassword = await _userManager.CheckPasswordAsync(user, password);
             if(!checkpassword)
             {
@@ -72,10 +72,7 @@ namespace Ecommerce.Application.Services
         public async Task<string> GenerateJwtTokenAsync(User user)
         {
             var roles = await _userManager.GetRolesAsync(user);
-            foreach (var role in roles) {
-                _logger.LogInformation("User {UserId} in role 'Admin': {IsInRole}", user.Id, role);
-            }
-            
+
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Jwt:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

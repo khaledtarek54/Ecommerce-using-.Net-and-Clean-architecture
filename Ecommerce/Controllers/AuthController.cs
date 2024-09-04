@@ -62,7 +62,7 @@ namespace Ecommerce.Web.Controllers
             }
 
             var token = _userService.GenerateJwtTokenAsync(user);
-            return Ok(new { token });
+            return Ok(new { token , user});
         }
     }
 }
