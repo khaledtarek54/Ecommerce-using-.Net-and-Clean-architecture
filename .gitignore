@@ -1,0 +1,14 @@
+﻿.cache/
+
+# Ignore bin and obj folders
+**/bin/
+**/obj/
+*/bin/
+*/obj/
+
+# Ignore specific source link JSON files
+*.sourcelink.json
+
+# Ignore Visual Studio and .NET build artifacts
+.vscode/
+.vs/

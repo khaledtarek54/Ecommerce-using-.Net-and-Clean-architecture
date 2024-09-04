@@ -7,14 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ecommerce.Application\Ecommerce.Application.csproj" />
     <ProjectReference Include="..\Ecommerce.Core\Ecommerce.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ExternalServices\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

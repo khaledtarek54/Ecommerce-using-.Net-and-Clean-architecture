@@ -1,12 +1,8 @@
 ﻿using Ecommerce.Application.DTOs;
-using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using Serilog;
+
 
 namespace Ecommerce.Web.Controllers
 {
@@ -29,8 +25,13 @@ namespace Ecommerce.Web.Controllers
             return Ok(message);
         }
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterDto registerDto)
+        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
         {
+            if (!ModelState.IsValid)
+            {
+                Log.Information("The user entered wrong data");
+                return BadRequest(ModelState);
+            }
             try
             {
                 var user = await _userService.RegisterAsync(
@@ -48,15 +49,19 @@ namespace Ecommerce.Web.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginDto loginDto)
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var user = await _userService.AuthenticateAsync(loginDto.Email, loginDto.Password);
             if (user == null)
             {
                 return Unauthorized("Invalid email or password");
             }
 
-            var token = _userService.GenerateJwtToken(user);
+            var token = _userService.GenerateJwtTokenAsync(user);
             return Ok(new { token });
         }
     }

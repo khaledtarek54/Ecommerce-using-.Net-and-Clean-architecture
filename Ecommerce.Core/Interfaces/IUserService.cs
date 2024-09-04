@@ -10,7 +10,11 @@ namespace Ecommerce.Core.Interfaces
     public interface IUserService
     {
         Task<User> RegisterAsync(string firstName, string lastName, string email, string password);
+        Task<IEnumerable<User>> GetAllAsync();
+        Task<User> GetByIdAsync(string id);
+        Task<bool> DeleteUserAsync(string id);
+
         Task<User> AuthenticateAsync(string email, string password);
-        string GenerateJwtToken(User user);
+        Task<string> GenerateJwtTokenAsync(User user);
     }
 }

@@ -1,4 +1,6 @@
-﻿using Ecommerce.Infrastructure.Data;
+﻿using Ecommerce.Core.Interfaces;
+using Ecommerce.Infrastructure.Data;
+using Ecommerce.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,8 +19,8 @@ namespace Ecommerce.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
-            // Other service registrations
-
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IProductRepository, ProductRepository>();
             return services;
         }
     }
