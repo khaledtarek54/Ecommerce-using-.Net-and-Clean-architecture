@@ -1,13 +1,13 @@
-﻿using Ecommerce.Core.Interfaces;
+﻿using Ecommerce.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Core.Entities
+namespace Ecommerce.Application.DTOs
 {
-    public class Product : IAuditable
+    public class ProductDto
     {
         public Guid Id { get; set; }
 
@@ -23,17 +23,12 @@ namespace Ecommerce.Core.Entities
 
         public DateTime? UpdatedDate { get; set; }
 
-        public bool IsAvailable { get; set; } = true;
+        public bool IsAvailable { get; set; }
 
         public int StockQuantity { get; set; }
 
         public Guid CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
-
         public Guid BrandId { get; set; }
-
-        public virtual Brand Brand { get; set; }
-
     }
 }

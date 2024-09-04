@@ -20,7 +20,7 @@ namespace Ecommerce.Infrastructure
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-
+            services.AddScoped<IProductRepository, ProductRepository>();
             return services;
         }
     }

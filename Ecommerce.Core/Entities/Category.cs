@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Ecommerce.Core.Entities
@@ -15,6 +16,7 @@ namespace Ecommerce.Core.Entities
         public int CategoryId { get; set; } = 0;
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+
         public virtual ICollection<Product> Products { get; set; }
     }
 }

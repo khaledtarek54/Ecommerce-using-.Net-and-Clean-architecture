@@ -23,12 +23,12 @@ namespace Ecommerce.Application.Services
 
         public async Task<Category> GetCategoryByIdAsync(Guid id)
         {
-            return await _categoryRepository.GetByIdAsync(id);
+            return await _categoryRepository.GetByIdAsync(id, c => c.Products);
         }
 
         public async Task<IEnumerable<Category>> GetAllCategoriesAsync()
         {
-            return await _categoryRepository.GetAllAsync();
+            return await _categoryRepository.GetAllAsync(c => c.Products);
         }
 
         public async Task AddCategoryAsync(CategoryDto categoryDto)

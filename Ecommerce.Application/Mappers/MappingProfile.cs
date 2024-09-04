@@ -16,6 +16,10 @@ namespace Ecommerce.Application.Mappers
         {
             CreateMap<CategoryDto, Category>();
             CreateMap<Category, CategoryDto>();
+            CreateMap<Brand, BrandDto>();
+            CreateMap<BrandDto, Brand>();
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>();
         }
     }
 }
