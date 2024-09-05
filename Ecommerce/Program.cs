@@ -1,4 +1,5 @@
 
+using Ecommerce.Application.Interfaces;
 using Ecommerce.Application.Mappers;
 using Ecommerce.Application.Services;
 using Ecommerce.Core.Entities;
@@ -42,6 +43,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddTransient<UserRoleService>();
 builder.Services.AddTransient<CategoryService>();
 builder.Services.AddTransient<BrandService>();
