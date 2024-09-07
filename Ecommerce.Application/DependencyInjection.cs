@@ -1,4 +1,6 @@
-﻿using Ecommerce.Core.Interfaces;
+﻿using Ecommerce.Application.Interfaces;
+using Ecommerce.Application.Services;
+using Ecommerce.Core.Interfaces;
 using Ecommerce.Infrastructure.Data;
 using Ecommerce.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Infrastructure
+namespace Ecommerce.Application
 {
     public static class DependencyInjection
     {
@@ -19,10 +21,7 @@ namespace Ecommerce.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<ICartRepository, CartRepository>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
             return services;
         }
     }

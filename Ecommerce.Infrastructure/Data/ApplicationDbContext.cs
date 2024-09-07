@@ -22,6 +22,8 @@ namespace Ecommerce.Infrastructure.Data
             builder.ApplyConfiguration(new BrandConfiguration());
             builder.ApplyConfiguration(new CartConfiguration());
             builder.ApplyConfiguration(new CartItemConfiguration());
+            builder.ApplyConfiguration(new OrderConfiguration());
+            builder.ApplyConfiguration(new OrderItemConfiguration());
         }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
@@ -48,6 +50,8 @@ namespace Ecommerce.Infrastructure.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
     }
 }

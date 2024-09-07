@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Application.DTOs;
+using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -56,13 +57,13 @@ namespace Ecommerce.Web.Controllers
                 return BadRequest(ModelState);
             }
             var user = await _userService.AuthenticateAsync(loginDto.Email, loginDto.Password);
-            if (user == null)
+            if (user[0] == null)
             {
                 return Unauthorized("Invalid email or password");
             }
 
-            var token = _userService.GenerateJwtTokenAsync(user);
-            return Ok(new { token , user});
+            var token = _userService.GenerateJwtTokenAsync((User)user[0]);
+            return Ok(new { token = token.Result, user = (UserDto)user[1] });
         }
     }
 }
