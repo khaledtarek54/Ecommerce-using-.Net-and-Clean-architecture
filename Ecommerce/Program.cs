@@ -1,4 +1,5 @@
 
+using Ecommerce.Application;
 using Ecommerce.Application.Interfaces;
 using Ecommerce.Application.Mappers;
 using Ecommerce.Application.Services;
@@ -37,6 +38,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();

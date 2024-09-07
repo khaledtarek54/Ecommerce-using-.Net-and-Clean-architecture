@@ -24,7 +24,10 @@ namespace Ecommerce.Infrastructure.Configurations
                 .IsRequired();
 
             builder.Property(o => o.Status)
-                .IsRequired();
+           .HasConversion(
+               v => v.ToString(), 
+               v => (OrderStatus)Enum.Parse(typeof(OrderStatus), v) 
+           );
 
             builder.Property(o => o.ShippingAddress)
                 .IsRequired();

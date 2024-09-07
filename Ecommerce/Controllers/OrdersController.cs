@@ -21,7 +21,7 @@ namespace Ecommerce.Controllers
         public async Task<ActionResult<Order>> CreateOrder(Guid userId)
         {
             var createdOrder = await _orderService.CreateOrderAsync(userId);
-            return CreatedAtAction(nameof(GetOrderByOrderId), new { id = createdOrder.Id }, createdOrder);
+            return Ok(createdOrder);
         }
         [HttpPost("ChangeOrderStatus")]
         public async Task<ActionResult<Order>> ChangeOrderStatus(Guid orderId, OrderStatus orderStatus)
@@ -43,12 +43,12 @@ namespace Ecommerce.Controllers
         [HttpGet("OrdersByUserId/{userId}")]
         public async Task<ActionResult<Order>> GetOrdersByUserId(Guid userId)
         {
-            var order = await _orderService.GetOrderByIdAsync(userId);
-            if (order == null)
+            var orders = await _orderService.GetOrdersByUserIdAsync(userId);
+            if (orders == null)
             {
                 return NotFound();
             }
-            return Ok(order);
+            return Ok(orders);
         }
 
     }
