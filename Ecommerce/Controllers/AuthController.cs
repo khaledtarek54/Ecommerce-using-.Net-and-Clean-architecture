@@ -50,7 +50,7 @@ namespace Ecommerce.Web.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login([FromBody] LoginDto loginDto)
         {
             if (!ModelState.IsValid)
             {
@@ -62,8 +62,10 @@ namespace Ecommerce.Web.Controllers
                 return Unauthorized("Invalid email or password");
             }
 
-            var token = _userService.GenerateJwtTokenAsync((User)user[0]);
-            return Ok(new { token = token.Result, user = (UserDto)user[1] });
+            var token = await _userService.GenerateJwtTokenAsync((User)user[0]);
+            var userObject = (UserDto)user[1];
+            userObject.token = token.ToString();
+            return Ok(userObject);
         }
     }
 }

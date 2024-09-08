@@ -13,6 +13,7 @@ namespace Ecommerce.Application.DTOs
         public string lastName { get; set; }
         public string Email { get; set; }
         public IList<string> Roles { get; set; }
+        public string token { get; set; }
 
     }
 }
