@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ecommerce.Application.DTOs;
+using StackExchange.Redis;
+using System.Text.Json;
 
 namespace Ecommerce.Application.Services
 {
@@ -17,15 +19,39 @@ namespace Ecommerce.Application.Services
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<ProductService> _logger;
-        public ProductService(ILogger<ProductService> logger, IMapper mapper, IProductRepository productRepository)
+        private readonly IConnectionMultiplexer _redis;
+        public ProductService(ILogger<ProductService> logger, IMapper mapper, IProductRepository productRepository, IConnectionMultiplexer redis)
         {
             _logger = logger;
             _mapper = mapper;
             _productRepository = productRepository;
+            _redis = redis;
         }
         public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
-            return await _productRepository.GetAllProductsAsync();
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve
+            };
+            var cacheKey = "all_products";
+            var database = _redis.GetDatabase();
+
+            // Check if the data is already in Redis cache
+            var cachedProducts = await database.StringGetAsync(cacheKey);
+            if (!cachedProducts.IsNullOrEmpty)
+            {
+                _logger.LogInformation("returned cached products");
+                return JsonSerializer.Deserialize<IEnumerable<Product>>(cachedProducts, options);
+            }
+
+            // Fetch data from the database
+            var products = await _productRepository.GetAllProductsAsync();
+
+
+            // Cache the data in Redis
+            await database.StringSetAsync(cacheKey, JsonSerializer.Serialize(products, options), TimeSpan.FromMinutes(10));
+
+            return products;
         }
 
         public async Task<Product> GetProductByIdAsync(Guid id)

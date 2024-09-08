@@ -50,6 +50,7 @@ namespace Ecommerce.Application.Services
             //// get shipping cost from delivery service ( future service )
             //// adding discount ( future feature )
             //// calculate total amount of order
+            //// check every product with quantity if exist inside product table or not ( urgent )*******
 
 
             Order newOrder = new Order
