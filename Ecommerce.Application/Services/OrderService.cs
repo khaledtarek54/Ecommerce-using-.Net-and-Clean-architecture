@@ -44,15 +44,14 @@ namespace Ecommerce.Application.Services
         public async Task<Order> CreateOrderAsync(Guid userId)
         {
             var cart = await _cartRepository.GetCartByUserIdAsync(userId);
-            //// apply DB transaction ( urgent )*******
             //// calculate tax ( next feature )
             //// get shipping address from customer details ( next feature )
             //// get shipping cost from delivery service ( future service )
             //// adding discount ( future feature )
             //// calculate total amount of order
-            //// check every product with quantity if exist inside product table or not ( urgent )*******
+            
 
-
+            Order createdOrder = new Order();
             Order newOrder = new Order
             {
                 UserId = userId,
@@ -71,20 +70,33 @@ namespace Ecommerce.Application.Services
 
             };
 
-            var CreatedOrder =await _orderRepository.CreateOrderAsync(newOrder);
-
-            foreach (var orderItem in CreatedOrder.OrderItems)
+            await _orderRepository.ExecuteInTransactionAsync(async () =>
             {
-                orderItem.OrderId = CreatedOrder.Id;
-            }
+                foreach (var item in newOrder.OrderItems)
+                {
+                    if (!await _orderRepository.ProductExistsAsync(item.ProductId, item.Quantity))
+                    {
+                        throw new Exception("One or more products are out of stock or do not exist.");
+                    }
+                }
 
-            await _orderRepository.UpdateOrderAsync(CreatedOrder); 
+                createdOrder = await _orderRepository.CreateOrderAsync(newOrder);
+
+                // Set OrderId for each order item
+                foreach (var orderItem in createdOrder.OrderItems)
+                {
+                    orderItem.OrderId = createdOrder.Id;
+                }
+
+                await _orderRepository.UpdateOrderAsync(createdOrder);
+
+            });
 
             //// update inventory ( urgent )********
-             
+
             //// send mail with order details using events ( future service ) 
 
-            return CreatedOrder;
+            return createdOrder;
         }
 
         public async Task<Order?> GetOrderByIdAsync(Guid orderId)
