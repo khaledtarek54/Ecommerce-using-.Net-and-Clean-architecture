@@ -2,11 +2,7 @@
 using Ecommerce.Core.Interfaces;
 using Ecommerce.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Ecommerce.Infrastructure.Repositories
 {
@@ -47,6 +43,27 @@ namespace Ecommerce.Infrastructure.Repositories
         {
             _dbContext.Orders.Update(order);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<bool> ProductExistsAsync(Guid productId, int quantity)
+        {
+            var product = await _dbContext.Products.FindAsync(productId);
+            return product != null && product.StockQuantity >= quantity;
+        }
+
+        public async Task ExecuteInTransactionAsync(Func<Task> action)
+        {
+            using var transaction = await _dbContext.Database.BeginTransactionAsync();
+            try
+            {
+                await action();
+                await transaction.CommitAsync();
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
     }
 }

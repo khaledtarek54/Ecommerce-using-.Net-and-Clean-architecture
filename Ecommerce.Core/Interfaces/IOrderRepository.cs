@@ -13,6 +13,8 @@ namespace Ecommerce.Core.Interfaces
         Task<IEnumerable<Order>> GetOrdersByUserIdAsync(Guid userId);
         Task<Order?> GetOrderByIdAsync(Guid orderId);
         Task UpdateOrderAsync(Order order);
+        Task<bool> ProductExistsAsync(Guid productId, int quantity);
+        Task ExecuteInTransactionAsync(Func<Task> action);
 
 
     }
