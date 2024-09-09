@@ -15,12 +15,16 @@ namespace Ecommerce.Application.Services
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ICartRepository _cartRepository;
+        private readonly IInventoryService _inventoryService;
+        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        public OrderService(IOrderRepository orderRepository, IMapper mapper, ICartRepository cartRepository)
+        public OrderService(IOrderRepository orderRepository, IMapper mapper, ICartRepository cartRepository, IInventoryService inventoryService, IProductRepository productRepository)
         {
             _orderRepository = orderRepository;
             _mapper = mapper;
             _cartRepository = cartRepository;
+            _inventoryService = inventoryService;
+            _productRepository = productRepository;
         }
 
         public Task CancelOrderAsync(Guid orderId)
@@ -75,13 +79,23 @@ namespace Ecommerce.Application.Services
 
             foreach (var orderItem in CreatedOrder.OrderItems)
             {
+                ////
                 orderItem.OrderId = CreatedOrder.Id;
             }
 
-            await _orderRepository.UpdateOrderAsync(CreatedOrder); 
+            await _orderRepository.UpdateOrderAsync(CreatedOrder);
+
+
+            
+
 
             //// update inventory ( urgent )********
-             
+            ///
+
+             await _inventoryService.ProductDeduct(CreatedOrder);
+
+            
+
             //// send mail with order details using events ( future service ) 
 
             return CreatedOrder;
