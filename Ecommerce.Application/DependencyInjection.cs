@@ -22,6 +22,7 @@ namespace Ecommerce.Application
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IOrderService, OrderService>();
+            services.AddTransient<IInventoryService, InventoryService>();
             return services;
         }
     }

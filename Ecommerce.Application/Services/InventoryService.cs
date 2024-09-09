@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Application.Interfaces;
 using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,11 @@ namespace Ecommerce.Application.Services
     public class InventoryService : IInventoryService
     {
         private readonly IProductRepository _productRepository;
-
-        public InventoryService(IProductRepository productRepository)
+        private readonly ILogger<InventoryService> _logger;
+        public InventoryService(IProductRepository productRepository, ILogger<InventoryService> logger)
         {
             _productRepository = productRepository;
+            _logger = logger;
         }
 
         public async Task ProductDeduct(Order order)
@@ -24,12 +26,9 @@ namespace Ecommerce.Application.Services
             {
 
                 var product = _productRepository.GetProductByIdAsync(orderItem.ProductId);
-                if (product.IsCompletedSuccessfully)
+                if (product != null)
                 {
-
                     product.Result.StockQuantity -= orderItem.Quantity;
-
-
                     await _productRepository.UpdateProductAsync(product.Result.Id, product.Result);
                 }
             }
@@ -42,11 +41,9 @@ namespace Ecommerce.Application.Services
             {
 
                 var product = _productRepository.GetProductByIdAsync(orderItem.ProductId);
-                if (product.IsCompletedSuccessfully)
+                if (product != null)
                 {
-
                     product.Result.StockQuantity += orderItem.Quantity;
-
                     await _productRepository.UpdateProductAsync(product.Result.Id, product.Result);
 
                 }

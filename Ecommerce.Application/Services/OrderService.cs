@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using Ecommerce.Application.DTOs;
 using Ecommerce.Application.Interfaces;
 using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+
+
 
 namespace Ecommerce.Application.Services
 {
@@ -16,15 +13,13 @@ namespace Ecommerce.Application.Services
         private readonly IOrderRepository _orderRepository;
         private readonly ICartRepository _cartRepository;
         private readonly IInventoryService _inventoryService;
-        private readonly IProductRepository _productRepository;
-        private readonly IMapper _mapper;
-        public OrderService(IOrderRepository orderRepository, IMapper mapper, ICartRepository cartRepository, IInventoryService inventoryService, IProductRepository productRepository)
+        private readonly ILogger<OrderService> _logger;
+        public OrderService(IOrderRepository orderRepository, ICartRepository cartRepository, IInventoryService inventoryService, ILogger<OrderService> logger)
         {
             _orderRepository = orderRepository;
-            _mapper = mapper;
             _cartRepository = cartRepository;
             _inventoryService = inventoryService;
-            _productRepository = productRepository;
+            _logger = logger;
         }
 
         public Task CancelOrderAsync(Guid orderId)
@@ -92,9 +87,11 @@ namespace Ecommerce.Application.Services
                 {
                     orderItem.OrderId = createdOrder.Id;
                 }
-
+               
                 await _orderRepository.UpdateOrderAsync(createdOrder);
-                await _inventoryService.ProductDeduct(CreatedOrder);
+                _logger.LogInformation("order created");
+                await _inventoryService.ProductDeduct(createdOrder);
+                _logger.LogInformation("update inventory");
             });
 
             //// update inventory ( urgent )********
