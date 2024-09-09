@@ -36,7 +36,7 @@ namespace Ecommerce.Application.Services
 
         public async Task ChangeOrderStatusAsync(Guid orderId, OrderStatus orderStatus)
         {
-            var order  = await _orderRepository.GetOrderByIdAsync(orderId);
+            var order = await _orderRepository.GetOrderByIdAsync(orderId);
             if (order == null)
             {
                 return;
@@ -53,7 +53,7 @@ namespace Ecommerce.Application.Services
             //// get shipping cost from delivery service ( future service )
             //// adding discount ( future feature )
             //// calculate total amount of order
-            
+
 
             Order createdOrder = new Order();
             Order newOrder = new Order
@@ -76,22 +76,7 @@ namespace Ecommerce.Application.Services
 
             await _orderRepository.ExecuteInTransactionAsync(async () =>
             {
-                ////
-                orderItem.OrderId = CreatedOrder.Id;
-            }
 
-            await _orderRepository.UpdateOrderAsync(CreatedOrder);
-
-
-            
-
-
-            //// update inventory ( urgent )********
-            ///
-
-             
-
-            
                 foreach (var item in newOrder.OrderItems)
                 {
                     if (!await _orderRepository.ProductExistsAsync(item.ProductId, item.Quantity))
