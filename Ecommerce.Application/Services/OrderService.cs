@@ -15,12 +15,16 @@ namespace Ecommerce.Application.Services
     {
         private readonly IOrderRepository _orderRepository;
         private readonly ICartRepository _cartRepository;
+        private readonly IInventoryService _inventoryService;
+        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        public OrderService(IOrderRepository orderRepository, IMapper mapper, ICartRepository cartRepository)
+        public OrderService(IOrderRepository orderRepository, IMapper mapper, ICartRepository cartRepository, IInventoryService inventoryService, IProductRepository productRepository)
         {
             _orderRepository = orderRepository;
             _mapper = mapper;
             _cartRepository = cartRepository;
+            _inventoryService = inventoryService;
+            _productRepository = productRepository;
         }
 
         public Task CancelOrderAsync(Guid orderId)
@@ -72,6 +76,22 @@ namespace Ecommerce.Application.Services
 
             await _orderRepository.ExecuteInTransactionAsync(async () =>
             {
+                ////
+                orderItem.OrderId = CreatedOrder.Id;
+            }
+
+            await _orderRepository.UpdateOrderAsync(CreatedOrder);
+
+
+            
+
+
+            //// update inventory ( urgent )********
+            ///
+
+             
+
+            
                 foreach (var item in newOrder.OrderItems)
                 {
                     if (!await _orderRepository.ProductExistsAsync(item.ProductId, item.Quantity))
@@ -89,7 +109,7 @@ namespace Ecommerce.Application.Services
                 }
 
                 await _orderRepository.UpdateOrderAsync(createdOrder);
-
+                await _inventoryService.ProductDeduct(CreatedOrder);
             });
 
             //// update inventory ( urgent )********
