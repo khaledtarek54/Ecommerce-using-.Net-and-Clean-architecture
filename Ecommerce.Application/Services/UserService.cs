@@ -1,4 +1,5 @@
-﻿using Ecommerce.Core.Entities;
+﻿using Ecommerce.Application.DTOs;
+using Ecommerce.Core.Entities;
 using Ecommerce.Core.Interfaces;
 using Ecommerce.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -54,28 +56,39 @@ namespace Ecommerce.Application.Services
             }
             return user;
         }
-        public async Task<User?> AuthenticateAsync(string email, string password)
+        public async Task<ArrayList> AuthenticateAsync(string email, string password)
         {
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
                 return null;
             }
-            _logger.LogInformation("User {UserId}", user.Id);
+            
             var checkpassword = await _userManager.CheckPasswordAsync(user, password);
             if(!checkpassword)
             {
                 return null;
             }
-            return user;
+            var roles = await _userManager.GetRolesAsync(user);
+            UserDto userWithRoles = new UserDto
+            { 
+                Id = user.Id,
+                firstName = user.FirstName,
+                lastName = user.LastName,
+                Email = email,
+                Roles = roles
+            };
+            ArrayList userArray = new ArrayList
+            {
+                user,
+                userWithRoles
+            };
+            return userArray;
         }
         public async Task<string> GenerateJwtTokenAsync(User user)
         {
             var roles = await _userManager.GetRolesAsync(user);
-            foreach (var role in roles) {
-                _logger.LogInformation("User {UserId} in role 'Admin': {IsInRole}", user.Id, role);
-            }
-            
+
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Jwt:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

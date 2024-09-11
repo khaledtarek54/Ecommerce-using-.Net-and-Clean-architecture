@@ -1,0 +1,39 @@
+﻿using Ecommerce.Core.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ecommerce.Infrastructure.Configurations
+{
+    public class CartConfiguration : IEntityTypeConfiguration<Cart>
+    {
+        public void Configure(EntityTypeBuilder<Cart> builder)
+        {
+            
+            builder.HasKey(c => c.Id);
+
+            builder.Property(c => c.IsDeleted)
+                .HasDefaultValue(false);
+
+            builder.Property(c => c.UserId)
+                .IsRequired();
+
+            builder.HasQueryFilter(c => !c.IsDeleted);
+
+            builder.Property(b => b.CreatedDate)
+                .IsRequired()
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+            builder.Property(b => b.UpdatedDate)
+                .IsRequired(false);
+
+            builder.HasMany(c => c.CartItems)
+                .WithOne(c => c.Cart)
+                .HasForeignKey(c => c.CartId);
+        }
+    }
+}

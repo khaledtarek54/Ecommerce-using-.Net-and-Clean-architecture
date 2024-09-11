@@ -11,9 +11,14 @@ services:
       - "5001:5001"
     depends_on:
      - ecommerce.database
+     - redis
 
 
-
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
 
   ecommerce.database:
     image: postgres:latest

@@ -12,3 +12,5 @@
 # Ignore Visual Studio and .NET build artifacts
 .vscode/
 .vs/
+
+*/Logs/

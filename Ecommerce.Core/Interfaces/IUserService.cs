@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Core.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Ecommerce.Core.Interfaces
         Task<User> GetByIdAsync(string id);
         Task<bool> DeleteUserAsync(string id);
 
-        Task<User> AuthenticateAsync(string email, string password);
+        Task<ArrayList> AuthenticateAsync(string email, string password);
         Task<string> GenerateJwtTokenAsync(User user);
     }
 }
