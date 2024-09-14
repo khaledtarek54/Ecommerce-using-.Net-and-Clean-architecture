@@ -94,7 +94,6 @@ namespace Ecommerce.Application.Services
                 _logger.LogInformation("update inventory");
             });
 
-            //// update inventory ( urgent )********
 
             //// send mail with order details using events ( future service ) 
 

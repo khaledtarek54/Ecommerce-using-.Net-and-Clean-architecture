@@ -20,9 +20,14 @@ namespace Ecommerce.Application
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddTransient<IProductService, ProductService>();
+            services.AddScoped<ICartService, CartService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddTransient<IInventoryService, InventoryService>();
+            services.AddTransient<UserRoleService>();
+            services.AddTransient<CategoryService>();
+            services.AddTransient<BrandService>();
             return services;
         }
     }

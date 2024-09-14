@@ -19,6 +19,7 @@ using Serilog;
 using StackExchange.Redis;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,12 +48,6 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<ICartService, CartService>();
-builder.Services.AddTransient<UserRoleService>();
-builder.Services.AddTransient<CategoryService>();
-builder.Services.AddTransient<BrandService>();
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"]);
 builder.Services.AddAuthentication(options =>
@@ -78,7 +73,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
 });
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -123,6 +119,25 @@ builder.Services.AddCors(options =>
 });
 
 
+builder.Services.AddRateLimiter(options =>
+{
+    // Apply a global rate limit policy for the whole application
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: context.User.Identity?.Name ?? context.Request.Headers.Host.ToString(),
+            factory: partition => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 10, // 10 requests
+                Window = TimeSpan.FromMinutes(1), // per 1 minute
+                QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                QueueLimit = 0 // No queued requests
+            }));
+
+    options.RejectionStatusCode = 429; // HTTP 429 Too Many Requests
+});
+
+
+
 
 var app = builder.Build();
 
@@ -149,6 +164,7 @@ if (app.Environment.IsDevelopment())
     }
 
 }
+app.UseRateLimiter();
 app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 app.UseAuthentication();
